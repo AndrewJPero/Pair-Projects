@@ -1,0 +1,127 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "body";
+    gap: 7px;
+}
+
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "splash nav";
+}
+
+main{
+    grid-area: body;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "rainbow rainbow"
+        "race refresh"
+        "footer footer";
+    gap: 7px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 800px){
+    header{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "splash"
+        "nav";
+    }
+}
+@media (max-width: 800px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "rainbow"
+        "race"
+        "refresh"
+        "footer";
+    }
+}
+
+@media (max-width: 800px){
+    #rainbow{
+        flex-direction: column;
+    }
+}
+
+#splash{
+    grid-area: splash;
+    display: flex;
+    padding-left: 10px;
+    align-items: center
+}
+
+#nav{
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#rainbow{
+    grid-area: rainbow;
+    display: flex;
+    align-items: center;
+}
+
+#race{
+    grid-area: race;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-areas: 
+        "race-image race-headline"
+        "race-image race-article";
+}
+
+@media (max-width: 800px){
+    #race{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "race-image race-headline"
+            "race-article race-article";
+    }
+}
+
+#race-image{
+    grid-area: race-image;
+}
+
+#race-headline{
+    grid-area: race-headline;
+    text-align: center;
+}
+
+#race-article{
+    grid-area: race-article;
+}
+
+#refresh{
+    grid-area: refresh;
+    display: flex;
+    flex-direction: column;
+}
+
+#refresh article{
+    text-align: center;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+
+
